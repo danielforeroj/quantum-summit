@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Tectonic Design System - matches tectonic.xyz */
+    --background: 220 70% 4%;
+    --foreground: 210 20% 98%;
+
+    --card: 220 60% 6%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 220 60% 6%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 195 100% 50%;
+    --primary-foreground: 220 70% 4%;
+
+    --secondary: 220 50% 10%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 220 40% 12%;
+    --muted-foreground: 215 15% 50%;
+
+    --accent: 195 100% 50%;
+    --accent-foreground: 220 70% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 40% 15%;
+    --input: 220 40% 12%;
+    --ring: 195 100% 50%;
+
+    --radius: 0.375rem;
+
+    /* Tectonic custom tokens */
+    --surface-elevated: 220 55% 8%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: "Geist Mono", monospace;
+    font-optical-sizing: auto;
+  }
+
+  /* Offset for fixed header when scrolling to anchors */
+  section[id] {
+    scroll-margin-top: 100px;
+  }
+
+  body {
+    font-family: "Geist Mono", monospace !important;
+    font-optical-sizing: auto;
+    background-color: hsl(220 70% 4%);
+    color: hsl(210 20% 98%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Aurora gradient - vivid left-side blue glow like tectonic.xyz team page */
+  .aurora-bg {
+    position: relative;
+    background: hsl(220 70% 4%);
+  }
+  
+  .aurora-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 90% 130% at -10% 30%, hsl(210 100% 55% / 0.7) 0%, hsl(215 100% 50% / 0.35) 40%, transparent 70%),
+      radial-gradient(ellipse 60% 100% at 0% 15%, hsl(200 100% 60% / 0.5) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 90% at -5% 60%, hsl(195 100% 55% / 0.4) 0%, transparent 50%),
+      radial-gradient(ellipse 35% 60% at 10% 80%, hsl(220 100% 65% / 0.3) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+    animation: aurora-pulse 4s ease-in-out infinite;
+  }
+  
+  .aurora-bg > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Container */
+  .section-container {
+    @apply max-w-5xl mx-auto px-6 md:px-8;
+  }
+
+  /* Primary button - cyan filled like tectonic.xyz */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium tracking-wide transition-all duration-200;
+    text-transform: uppercase !important;
+    background-color: hsl(195 100% 50%);
+    color: hsl(220 70% 4%);
+    border: 1px solid hsl(195 100% 50%);
+    box-shadow: 0 0 0 0 hsl(195 100% 50% / 0);
+  }
+  
+  .btn-primary:hover {
+    background-color: hsl(195 100% 55%);
+    border-color: hsl(195 100% 55%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px -4px hsl(195 100% 50% / 0.5);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px -2px hsl(195 100% 50% / 0.4);
+  }
+
+  /* Secondary button - transparent with subtle border, white fill on hover */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium tracking-wide transition-all duration-200;
+    text-transform: uppercase !important;
+    border: 1px solid hsl(220 40% 25%);
+    color: hsl(210 20% 90%);
+    background: transparent;
+  }
+  
+  .btn-secondary:hover {
+    border-color: hsl(210 20% 98%);
+    background-color: hsl(210 20% 98%);
+    color: hsl(220 70% 4%);
+    transform: translateY(-1px);
+  }
+  
+  .btn-secondary:active {
+    transform: translateY(0);
+  }
+
+  /* Tertiary link button */
+  .btn-tertiary {
+    @apply inline-flex items-center text-sm font-normal transition-colors duration-200;
+    text-transform: uppercase !important;
+    color: hsl(215 15% 55%);
+  }
+  
+  .btn-tertiary:hover {
+    color: hsl(210 20% 90%);
+  }
+
+  /* Typography - clean, light weights like tectonic.xyz */
+  .heading-display {
+    @apply text-4xl md:text-5xl lg:text-[3.5rem] font-semibold tracking-tight leading-[1.1];
+    color: hsl(210 20% 98%);
+    text-transform: uppercase !important;
+  }
+
+  .heading-section {
+    @apply text-2xl md:text-3xl font-semibold tracking-tight;
+    color: hsl(210 20% 98%);
+    text-transform: uppercase !important;
+  }
+
+  .heading-subsection {
+    @apply text-base md:text-lg font-semibold tracking-wide;
+    color: hsl(210 20% 98%);
+    text-transform: uppercase !important;
+  }
+
+  .body-large {
+    @apply text-lg md:text-xl font-light leading-relaxed;
+    color: hsl(215 15% 60%);
+  }
+
+  .body-default {
+    @apply text-base font-light leading-relaxed;
+    color: hsl(215 15% 55%);
+  }
+
+  /* Label - uppercase tracking like tectonic nav */
+  .label-caps {
+    @apply text-[11px] font-normal tracking-[0.2em] uppercase;
+    color: hsl(195 100% 50%);
+  }
+
+  /* Card surfaces */
+  .surface-card {
+    @apply rounded;
+    background: hsl(220 60% 6%);
+    border: 1px solid hsl(220 40% 15%);
+  }
+
+  .surface-elevated {
+    @apply rounded;
+    background: hsl(220 55% 8%);
+    border: 1px solid hsl(220 40% 12%);
+  }
+
+  /* List styling */
+  .list-clean li {
+    @apply relative pl-4 text-sm font-light;
+    color: hsl(215 15% 55%);
+  }
+  
+  .list-clean li::before {
+    content: '';
+    @apply absolute left-0 top-[0.55rem] w-1 h-1 rounded-full;
+    background: hsl(195 100% 50% / 0.5);
+  }
+
+  /* Agenda */
+  .agenda-item {
+    @apply grid gap-4 py-3;
+    grid-template-columns: 70px 1fr;
+    border-bottom: 1px solid hsl(220 40% 12%);
+  }
+
+  .agenda-time {
+    @apply text-xs font-normal tabular-nums;
+    color: hsl(215 15% 45%);
+  }
+
+  .agenda-title {
+    @apply text-sm font-normal;
+    color: hsl(210 20% 90%);
+  }
+
+  /* Panel card */
+  .panel-card {
+    @apply p-5 rounded transition-all duration-200;
+    background: hsl(220 55% 7%);
+    border: 1px solid hsl(220 40% 12%);
+  }
+  
+  .panel-card:hover {
+    border-color: hsl(220 40% 18%);
+  }
+
+  /* Navigation - monospace-like tracking to match tectonic */
+  .nav-link {
+    @apply text-[11px] font-normal tracking-[0.15em] uppercase transition-colors duration-150;
+    color: hsl(215 15% 50%);
+  }
+  
+  .nav-link:hover {
+    color: hsl(210 20% 90%);
+  }
+
+  /* Trust stats */
+  .trust-stat {
+    @apply text-center transition-all duration-300;
+  }
+  
+  .trust-stat:hover {
+    transform: translateY(-2px);
+  }
+  
+  .trust-stat:hover .trust-stat-icon {
+    color: hsl(195 100% 60%);
+    transform: scale(1.1);
+  }
+
+  .trust-stat-icon {
+    @apply transition-all duration-300;
+  }
+
+  .trust-stat-value {
+    @apply text-xl md:text-2xl font-extralight tracking-wide transition-colors duration-300;
+    color: hsl(210 20% 98%);
+  }
+  
+  .trust-stat:hover .trust-stat-value {
+    color: hsl(195 100% 70%);
+  }
+
+  .trust-stat-label {
+    @apply text-[10px] md:text-xs font-light mt-2 tracking-widest transition-colors duration-300;
+    color: hsl(215 15% 50%);
+  }
+  
+  .trust-stat:hover .trust-stat-label {
+    color: hsl(215 15% 65%);
+  }
+}
