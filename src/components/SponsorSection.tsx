@@ -93,7 +93,6 @@ const SponsorSection = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 md:justify-end">
               <a href="https://docsend.com/view/747hn95h3fvqq32j" target="_blank" rel="noopener noreferrer" className="btn-primary text-center">Download Sponsorship Deck</a>
-              <a href="#" className="btn-secondary text-center">Book a 15-min Intro</a>
             </div>
           </div>
         </motion.div>

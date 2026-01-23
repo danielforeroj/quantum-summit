@@ -91,7 +91,14 @@ const SummitSection = () => {
           className="mt-8 md:mt-12 flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4"
         >
           <a href="https://luma.com/ez0wln8b?tk=GRhdgH" target="_blank" rel="noopener noreferrer" className="btn-primary text-center">RSVP</a>
-          <a href="#speak" className="btn-secondary text-center">Apply to Speak</a>
+          <a
+            href="https://forms.gle/zRqtAhNka16BHVeC6"
+            target="_blank"
+            rel="noreferrer"
+            className="btn-secondary text-center"
+          >
+            Apply to Speak
+          </a>
         </motion.div>
       </div>
     </section>
