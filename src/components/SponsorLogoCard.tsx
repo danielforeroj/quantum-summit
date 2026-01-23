@@ -18,8 +18,8 @@ const SponsorLogoCard = ({
   const sizeStyles =
     size === "compact"
       ? {
-          container: "p-3 md:p-4",
-          logo: "h-6 md:h-7",
+          container: "px-6 py-3 md:px-7 md:py-4",
+          logo: "h-7 md:h-8",
           fallback: "text-[11px] md:text-xs",
         }
       : {
@@ -43,13 +43,15 @@ const SponsorLogoCard = ({
           {sponsor.name}
         </span>
       ) : (
-        <img
-          src={sponsor.logoSrc}
-          alt={sponsor.name}
-          className={`${sizeStyles.logo} w-auto object-contain`}
-          loading="lazy"
-          onError={() => onError(sponsor.name)}
-        />
+        <div className="flex items-center justify-center w-full h-full">
+          <img
+            src={sponsor.logoSrc}
+            alt={sponsor.name}
+            className={`${sizeStyles.logo} w-auto max-w-full object-contain`}
+            loading="lazy"
+            onError={() => onError(sponsor.name)}
+          />
+        </div>
       )}
     </div>
   );
