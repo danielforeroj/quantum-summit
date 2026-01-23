@@ -8,17 +8,22 @@ export const sponsors: Sponsor[] = [
   // TODO: Replace with real sponsor entries + real logo filenames.
   {
     name: "Tectonic",
-    logoSrc: "/sponsors/tectonic.svg",
+    logoSrc: "/sponsors/tectonic-logo.png",
     href: "https://tectonic.xyz",
   },
   // TODO: Replace with a real sponsor entry.
   {
-    name: "Chainlink Labs",
-    logoSrc: "/sponsors/chainlink-labs.svg",
+    name: "Hack",
+    logoSrc: "/sponsors/hack-logo.png",
   },
   // TODO: Replace with a real sponsor entry.
   {
-    name: "Acme Capital",
-    logoSrc: "/sponsors/acme-capital.png",
+    name: "W3JOE",
+    logoSrc: "/sponsors/w3joe-logo.png",
   },
+    {
+    name: "Hexaco",
+    logoSrc: "/sponsors/hexaco-logo.png",
+  },
+
 ];
