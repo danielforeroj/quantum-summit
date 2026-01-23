@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SponsorsGrid from "@/components/SponsorsGrid";
 
 const sponsorshipIncludes = [
   "Stage presence (talk/moderation options depending on fit)",
@@ -37,6 +38,13 @@ const SponsorSection = () => {
             to the L1s, funds, and enterprises allocating 2026 budgets to post-quantum security.
           </p>
         </motion.div>
+
+        <div id="sponsors" className="mb-10 md:mb-12">
+          <p className="text-sm md:text-base text-foreground mb-4">
+            These companies already support these events.
+          </p>
+          <SponsorsGrid />
+        </div>
 
         {/* Two columns */}
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-16">
