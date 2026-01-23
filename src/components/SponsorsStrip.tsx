@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { sponsors } from "@/data/sponsors";
+import SponsorLogoCard from "@/components/SponsorLogoCard";
 
 const SponsorsStrip = () => {
   const [failedLogos, setFailedLogos] = useState<Record<string, boolean>>({});
@@ -10,20 +11,16 @@ const SponsorsStrip = () => {
 
   return (
     <div className="mt-6 md:mt-8">
-      <span className="label-caps text-primary/80 mb-3 block">Supported by</span>
-      <div className="flex flex-wrap items-center gap-3 md:gap-4">
+      <span className="label-caps text-primary/80 mb-3 block">SUPPORTED BY</span>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {sponsors.map((sponsor) => {
-          const content = failedLogos[sponsor.name] ? (
-            <span className="text-[11px] md:text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-border/40 text-muted-foreground">
-              {sponsor.name}
-            </span>
-          ) : (
-            <img
-              src={sponsor.logoSrc}
-              alt={sponsor.name}
-              className="h-7 md:h-8 w-auto object-contain"
-              loading="lazy"
-              onError={() => markFailed(sponsor.name)}
+          const content = (
+            <SponsorLogoCard
+              sponsor={sponsor}
+              failed={!!failedLogos[sponsor.name]}
+              onError={markFailed}
+              size="compact"
+              interactive={!!sponsor.href}
             />
           );
 
@@ -34,18 +31,14 @@ const SponsorsStrip = () => {
                 href={sponsor.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center"
+                className="group block"
               >
                 {content}
               </a>
             );
           }
 
-          return (
-            <div key={sponsor.name} className="inline-flex items-center">
-              {content}
-            </div>
-          );
+          return <div key={sponsor.name}>{content}</div>;
         })}
       </div>
     </div>
