@@ -54,14 +54,8 @@ const Footer = () => {
             © 2026 Tectonic. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-              Brand Kit
-            </a>
-            <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-              Contact
-            </a>
             <a 
-              href="https://twitter.com/tectonic" 
+              href="https://x.com/tectonicxyz" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"

@@ -27,12 +27,7 @@ const panels = [
     title: "Post-Quantum Cryptography Front and Centre",
     description: "Migration playbooks (hybrid modes, key rotation, compatibility), performance tradeoffs, and what \"production-ready\" looks like.",
     illustration: labyrinthIllustration,
-    speakers: [
-      "Danno Ferrin – Tectonic Labs",
-      "Alex Pruden – Project Eleven",
-      "Peter Waterland – Quantum Resistant Ledger",
-      "Ali El Kaafarani – PQShield"
-    ],
+    speakers: [],
     fullDescription: "Moving from classical to post-quantum cryptography isn't just a library swap—it's a multi-year migration affecting every layer of your stack. This panel covers hybrid deployment strategies, backwards compatibility patterns, key rotation mechanisms, and real performance benchmarks from production systems. Learn from teams who've already started their PQC journey."
   },
   {
@@ -40,16 +35,7 @@ const panels = [
     title: "TEEs, FHE, MPC, ZK in a Quantum World",
     description: "Real-world threat models and where each primitive belongs for scalable private execution, verifiable computation, and secure key management.",
     illustration: cubesIllustration,
-    speakers: [
-      "Rand Hindi – ZAMA",
-      "Guy Itzhaki – Fhenix",
-      "Zac Williamson – Aztec",
-      "Eli Ben-Sasson – StarkWare",
-      "Dan Boneh – Stanford Cryptography Group",
-      "Matthew Green – Johns Hopkins University",
-      "Dawn Song – Oasis Labs",
-      "Silvio Micali – Algorand"
-    ],
+    speakers: [],
     fullDescription: "Trusted Execution Environments, Fully Homomorphic Encryption, Multi-Party Computation, and Zero-Knowledge Proofs each solve different problems—but how do they hold up against quantum adversaries? This panel maps out the threat landscape for each primitive, identifies which are quantum-resistant by design, and discusses practical deployment strategies for building quantum-safe confidential computing systems."
   },
   {
@@ -57,18 +43,7 @@ const panels = [
     title: "The Privacy Stack in the Quantum Era",
     description: "Durable privacy, metadata resistance, selective disclosure, and compliance-safe confidentiality.",
     illustration: eyeIllustration,
-    speakers: [
-      "Zooko or Alex Bornstein – ZCash",
-      "Alex Page or Dimitris Mouris – Nillion",
-      "Mert or Nick – Helius Labs",
-      "Zac Williamson – Aztec",
-      "Evan Shapiro – Mina Protocol",
-      "Dawn Song – Oasis Labs",
-      "Guy Zyskind – Secret Network",
-      "Alex Gluchowski – Matter Labs (zkSync)",
-      "Howard Wu – Aleo",
-      "Barry Whitehat – Offchain Labs"
-    ],
+    speakers: [],
     fullDescription: "Privacy today must remain private forever—even against future quantum computers. This panel examines what 'durable privacy' means in practice, how to protect metadata when transaction contents are encrypted, and how to build selective disclosure systems that satisfy both regulators and users. We'll also explore the tension between compliance requirements and true confidentiality."
   },
   {
@@ -135,6 +110,8 @@ const PanelThemes = () => {
                 {panel.description}
               </p>
 
+              <p className="text-xs text-muted-foreground mt-3">Speakers: TBC</p>
+
               {/* Click hint */}
               <span className="text-xs text-primary/60 mt-4 block group-hover:text-primary transition-colors">
                 Click for details →
@@ -157,7 +134,12 @@ const PanelThemes = () => {
       </div>
 
       {/* Panel Detail Dialog */}
-      <Dialog open={!!selectedPanel} onOpenChange={() => setSelectedPanel(null)}>
+      <Dialog
+        open={!!selectedPanel}
+        onOpenChange={(open) => {
+          if (!open) setSelectedPanel(null);
+        }}
+      >
         <DialogContent className="max-w-2xl bg-background border-border">
           {selectedPanel && (
             <>
@@ -181,25 +163,23 @@ const PanelThemes = () => {
                 {selectedPanel.fullDescription}
               </DialogDescription>
 
-              {selectedPanel.speakers.length > 0 && (
-                <div className="mt-6 pt-6 border-t border-border/30">
-                  <h4 className="text-sm font-medium text-primary mb-3 tracking-wider uppercase">
-                    Featured Speakers
-                  </h4>
-                  <ul className="space-y-2">
-                    {selectedPanel.speakers.map((speaker, idx) => (
-                      <li key={idx} className="body-default text-sm flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
-                        {speaker}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              <div className="mt-6 pt-6 border-t border-border/30">
+                <p className="text-sm text-muted-foreground">
+                  Speakers will be announced soon.
+                </p>
+              </div>
 
               <div className="mt-6 pt-4 flex gap-3">
                 <a href="https://luma.com/ez0wln8b?tk=GRhdgH" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm">
                   RSVP
+                </a>
+                <a
+                  href="https://forms.gle/zRqtAhNka16BHVeC6"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-secondary text-sm"
+                >
+                  Apply to Speak
                 </a>
               </div>
             </>

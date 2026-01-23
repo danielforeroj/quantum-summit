@@ -81,7 +81,12 @@ const HeroSection = () => {
               <a href="https://docsend.com/view/747hn95h3fvqq32j" target="_blank" rel="noopener noreferrer" className="btn-secondary text-center">
                 DOWNLOAD SPONSORSHIP DECK
               </a>
-              <a href="#speak" className="btn-secondary text-center">
+              <a
+                href="https://forms.gle/zRqtAhNka16BHVeC6"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-secondary text-center"
+              >
                 APPLY TO SPEAK →
               </a>
             </div>
