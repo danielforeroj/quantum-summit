@@ -24,7 +24,7 @@ const WhySection = () => {
           <span className="label-caps text-primary mb-3 md:mb-4 block">Why This Exists</span>
           <p className="body-large text-sm md:text-base">
             Quantum threat migration is moving from research into production budgets in 2026. 
-            This week is designed to help builders, institutions, and investors get aligned on 
+            This event is designed to help builders, institutions, and investors get aligned on 
             what "quantum-ready" means in practice for chains, custody, privacy, and tokenized 
             assets—and what teams should do next.
           </p>
