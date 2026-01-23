@@ -2,18 +2,20 @@ import { motion } from "framer-motion";
 import pyramidIllustration from "@/assets/illustrations/pyramid.png";
 
 const agenda = [
-  { time: "10:00", title: "Opening Keynote: Is the Quantum Threat Overhyped?" },
-  { time: "10:30", title: "Panel 1: Blockchains in the Quantum Era" },
-  { time: "10:50", title: "Presentation Slot 1" },
-  { time: "11:00", title: "Panel 2: Putting Post-Quantum Cryptography Front and Centre" },
-  { time: "11:20", title: "Break" },
-  { time: "11:30", title: "Panel 3: Where TEEs, FHE, MPC, and ZK Fit in a Quantum World" },
-  { time: "11:50", title: "Presentation Slot 2" },
-  { time: "12:00", title: "Lunch Break" },
-  { time: "13:00", title: "Panel 4: The Privacy Stack in the Quantum Era" },
-  { time: "13:20", title: "Presentation Slot 3" },
-  { time: "13:30", title: "Panel 5: Funding the Quantum Future" },
-  { time: "13:50", title: "Presentation Slot 4 / Closing" },
+  { time: "10:00 - 10:20", title: "Opening Keynote/Presentation" },
+  { time: "10:20 - 10:30", title: "Short Break" },
+  { time: "10:30 - 10:50", title: "Panel 1: Blockchains in the Quantum Era" },
+  { time: "10:50 - 11:00", title: "Presentation Slot 1 (10min)" },
+  { time: "11:00 - 11:20", title: "Panel 2: Putting Post-Quantum Cryptography Front and Centre" },
+  { time: "11:20 - 11:30", title: "Short Break" },
+  { time: "11:30 - 11:50", title: "Panel 3: Where TEEs, FHE, MPC, and ZK Fit in a Quantum World" },
+  { time: "11:50 - 12:00", title: "Presentation Slot 2 (10min)" },
+  { time: "12:00 - 12:30", title: "Lunch Break" },
+  { time: "12:30 - 13:00", title: "Fireside Chat" },
+  { time: "13:00 - 13:20", title: "Panel 4: The Privacy Stack in the Quantum Era" },
+  { time: "13:20 - 13:30", title: "Presentation Slot 3 (10min)" },
+  { time: "13:30 - 13:50", title: "Panel 5: Funding the Quantum Future" },
+  { time: "13:50 - 14:00", title: "Presentation Slot 4 (10min)" },
 ];
 
 const SummitSection = () => {
@@ -91,7 +93,14 @@ const SummitSection = () => {
           className="mt-8 md:mt-12 flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4"
         >
           <a href="https://luma.com/ez0wln8b?tk=GRhdgH" target="_blank" rel="noopener noreferrer" className="btn-primary text-center">RSVP</a>
-          <a href="#speak" className="btn-secondary text-center">Apply to Speak</a>
+          <a
+            href="https://forms.gle/zRqtAhNka16BHVeC6"
+            target="_blank"
+            rel="noreferrer"
+            className="btn-secondary text-center"
+          >
+            Apply to Speak
+          </a>
         </motion.div>
       </div>
     </section>

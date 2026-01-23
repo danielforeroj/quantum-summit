@@ -1,4 +1,5 @@
 import platformIllustration from "@/assets/illustrations/platform.png";
+import SponsorsStrip from "@/components/SponsorsStrip";
 
 const HeroSection = () => {
   return (
@@ -43,6 +44,7 @@ const HeroSection = () => {
                 <strong className="text-foreground">Quantum Mixer:</strong> a curated continuation immediately after the Summit for speakers, sponsors, and invited operators
               </li>
             </ul>
+            <SponsorsStrip />
           </div>
 
           {/* Event details */}
@@ -81,7 +83,12 @@ const HeroSection = () => {
               <a href="https://docsend.com/view/747hn95h3fvqq32j" target="_blank" rel="noopener noreferrer" className="btn-secondary text-center">
                 DOWNLOAD SPONSORSHIP DECK
               </a>
-              <a href="#speak" className="btn-secondary text-center">
+              <a
+                href="https://forms.gle/zRqtAhNka16BHVeC6"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-secondary text-center"
+              >
                 APPLY TO SPEAK →
               </a>
             </div>

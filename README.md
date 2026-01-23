@@ -60,6 +60,24 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## How do I manage the favicon?
+
+- **Remove**: delete `public/favicon.ico` from the repo (already removed in this branch).
+- **Add/replace**:
+  1. Add your new icon file at `public/favicon.ico` (or another name under `public/`).
+  2. Reference it in the document head in `index.html`, for example:
+     ```html
+     <link rel="icon" href="/favicon.ico" />
+     ```
+     If you use a different filename, update the `href` to match.
+
+## How do I edit SEO descriptions?
+
+Update the meta description and social sharing descriptions in `index.html`:
+
+- `<meta name="description" ...>` controls the primary SEO description.
+- `<meta property="og:description" ...>` controls the Open Graph description used by social networks.
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.

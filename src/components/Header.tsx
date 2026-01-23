@@ -22,6 +22,7 @@ const Header = () => {
           <a href="#summit" className="nav-link">Summit</a>
           <a href="#agenda" className="nav-link">Agenda</a>
           <a href="#mixer" className="nav-link">Mixer</a>
+          <a href="#sponsors" className="nav-link">Sponsors</a>
           <a href="#sponsor" className="nav-link">Sponsor</a>
         </nav>
 
@@ -49,6 +50,7 @@ const Header = () => {
                   <a href="#summit" className="nav-link text-sm">Summit</a>
                   <a href="#agenda" className="nav-link text-sm">Agenda</a>
                   <a href="#mixer" className="nav-link text-sm">Mixer</a>
+                  <a href="#sponsors" className="nav-link text-sm">Sponsors</a>
                   <a href="#sponsor" className="nav-link text-sm">Sponsor</a>
                   <div className="pt-2">
                     <a href="https://luma.com/ez0wln8b?tk=GRhdgH" target="_blank" rel="noopener noreferrer" className="btn-primary w-full text-center">
