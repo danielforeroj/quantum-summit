@@ -44,7 +44,9 @@ const HeroSection = () => {
                 <strong className="text-foreground">Quantum Mixer:</strong> a curated continuation immediately after the Summit for speakers, sponsors, and invited operators
               </li>
             </ul>
-            <SponsorsStrip />
+            <div className="mt-6">
+              <SponsorsStrip />
+            </div>
           </div>
 
           {/* Event details */}
