@@ -108,15 +108,21 @@ const SponsorSection = () => {
           <span className="label-caps mb-4 block">Primary Contacts</span>
           <div className="flex flex-wrap gap-8">
             <div>
-              <div className="text-sm text-foreground font-medium">Isaiah Soto</div>
-              <a href="mailto:isaiahsoto650@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                isaiahsoto650@gmail.com
-              </a>
-            </div>
-            <div>
               <div className="text-sm text-foreground font-medium">Min H. Kim</div>
               <a href="mailto:min@tectonic.xyz" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 min@tectonic.xyz
+              </a>
+            </div>
+            <div>
+              <div className="text-sm text-foreground font-medium">Daniel Forero</div>
+              <a href="mailto:daniel@tectonic.xyz" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                daniel@tectonic.xyz
+              </a>
+            </div>
+            <div>
+              <div className="text-sm text-foreground font-medium">Dion Guillaume</div>
+              <a href="mailto:dion@tectonic.xyz" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                dion@tectonic.xyz
               </a>
             </div>
           </div>
