@@ -89,3 +89,39 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## Media Partner Kit (password-gated pages)
+
+This project includes front-end routes for media resources:
+
+- `/media-partners`
+- `/media-partners/press-release`
+
+### Environment variables
+
+Create a `.env.local` file for local development:
+
+```bash
+VITE_MEDIA_PARTNERS_PASSWORD=your-password
+VITE_MEDIA_PARTNERS_ASSETS_URL=https://...
+VITE_PRESS_EMAIL=press@example.com
+VITE_PRESS_TELEGRAM=@your_handle
+VITE_TECTONIC_SITE_URL=https://tectonic.xyz
+VITE_SUMMIT_SITE_URL=https://quantumsummit.net
+VITE_TECTONIC_X_URL=https://x.com/...
+VITE_SUMMIT_X_URL=https://x.com/...
+VITE_PRESS_RELEASE_DOC_URL=https://...
+VITE_PRESS_RELEASE_PDF_URL=https://...
+```
+
+On Vercel, set the same keys in **Project Settings → Environment Variables** for each environment (Preview/Production), then redeploy.
+
+> Note: the password gate is client-side only and intended for light access control. It is not a secure backend authorization system.
+
+### Sponsors logo workflow
+
+1. Add logo files to `public/sponsors/`.
+2. Add or edit sponsor entries in `src/data/sponsors.ts`.
+3. Use `/sponsors/<file-name>` as `logoSrc` values.
+
+Sponsor logo rendering includes text fallback when images fail to load.
