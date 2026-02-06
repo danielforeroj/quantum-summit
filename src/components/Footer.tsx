@@ -28,6 +28,7 @@ const Footer = () => {
               <li><a href="#agenda" className="text-xs md:text-sm text-muted-foreground hover:text-foreground transition-colors">Agenda</a></li>
               <li><a href="#mixer" className="text-xs md:text-sm text-muted-foreground hover:text-foreground transition-colors">Quantum Mixer</a></li>
               <li><a href="#sponsor" className="text-xs md:text-sm text-muted-foreground hover:text-foreground transition-colors">Sponsor</a></li>
+              <li><a href="/media-partners" className="text-xs md:text-sm text-muted-foreground hover:text-foreground transition-colors">Media Partners</a></li>
             </ul>
           </div>
 
