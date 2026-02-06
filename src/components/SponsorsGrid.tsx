@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { sponsors } from "@/data/sponsors";
+import SponsorLogoCard from "@/components/SponsorLogoCard";
 
 const SponsorsGrid = () => {
   const [failedLogos, setFailedLogos] = useState<Record<string, boolean>>({});
@@ -12,21 +13,12 @@ const SponsorsGrid = () => {
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
       {sponsors.map((sponsor) => {
         const content = (
-          <div className="surface-elevated border border-border/40 rounded-lg px-4 py-4 md:px-5 md:py-5 flex items-center justify-center">
-            {failedLogos[sponsor.name] ? (
-              <span className="text-xs md:text-sm text-muted-foreground text-center">
-                {sponsor.name}
-              </span>
-            ) : (
-              <img
-                src={sponsor.logoSrc}
-                alt={sponsor.name}
-                className="h-8 md:h-10 w-auto object-contain"
-                loading="lazy"
-                onError={() => markFailed(sponsor.name)}
-              />
-            )}
-          </div>
+          <SponsorLogoCard
+            sponsor={sponsor}
+            failed={!!failedLogos[sponsor.name]}
+            onError={markFailed}
+            interactive={!!sponsor.href}
+          />
         );
 
         if (sponsor.href) {
@@ -36,7 +28,7 @@ const SponsorsGrid = () => {
               href={sponsor.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="block"
+              className="group block"
             >
               {content}
             </a>

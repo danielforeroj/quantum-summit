@@ -9,6 +9,7 @@ import SummitSection from "@/components/SummitSection";
 import PanelThemes from "@/components/PanelThemes";
 import MixerSection from "@/components/MixerSection";
 import SponsorSection from "@/components/SponsorSection";
+import MediaPartnersSection from "@/components/MediaPartnersSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -43,6 +44,7 @@ const Index = () => {
             <SummitSection />
             <PanelThemes />
             <MixerSection />
+            <MediaPartnersSection />
             <SponsorSection />
           </main>
           <Footer />
